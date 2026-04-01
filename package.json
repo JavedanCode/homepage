@@ -6,22 +6,19 @@
   "scripts": {
     "start": "webpack serve --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest",
-    "watch": "jest --watch *.js",
-    "watchAll": "jest --watchAll",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JavedanCode/webpack-template.git"
+    "url": "git+https://github.com/JavedanCode/homepage.git"
   },
   "keywords": [],
   "author": "Soren Javedan",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/JavedanCode/webpack-template/issues"
+    "url": "https://github.com/JavedanCode/homepage/issues"
   },
-  "homepage": "https://github.com/JavedanCode/webpack-template#readme",
+  "homepage": "https://github.com/JavedanCode/homepage#readme",
   "devDependencies": {
     "@babel/preset-env": "^7.29.2",
     "clean-webpack-plugin": "^1.0.1",
@@ -30,7 +27,6 @@
     "gh-pages": "^6.3.0",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.6",
-    "jest": "^30.3.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.105.4",
     "webpack-cli": "^7.0.2",
