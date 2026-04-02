@@ -1,70 +1,116 @@
+import githubLogo from "../img/github-mark.svg";
+import projectImg from "../img/img1.png";
+import visit from "../img/open-in-new.svg";
 export default function renderContent(content) {
+  // Create Elements
+  const contentWrapper = document.createElement("div");
   const heading = document.createElement("h2");
-  heading.textContent = "My Projects";
-
   const cardContainer = document.createElement("div");
-
   const projects = [
     {
-      img: "img1.png",
+      img: projectImg,
       name: "Project 1",
       description: "Description of project 1",
     },
     {
-      img: "img2.png",
+      img: projectImg,
       name: "Project 2",
       description: "Description of project 2",
     },
     {
-      img: "img3.png",
+      img: projectImg,
       name: "Project 3",
       description: "Description of project 3",
     },
     {
-      img: "img4.png",
+      img: projectImg,
       name: "Project 4",
       description: "Description of project 4",
     },
     {
-      img: "img5.png",
+      img: projectImg,
       name: "Project 5",
       description: "Description of project 5",
     },
     {
-      img: "img6.png",
+      img: projectImg,
       name: "Project 6",
       description: "Description of project 6",
     },
   ];
 
+  // Text Content
+  heading.textContent = "My Projects";
+
+  // Card Container Class
+  cardContainer.classList.add("card-container");
+  contentWrapper.classList.add("content-wrapper");
+
+  // Create Project Cards
   projects.forEach((project) => {
-    const card = document.createElement("div");
-
+    // Create Elements
+    const card = document.createElement("article");
     const projectImg = document.createElement("img");
-    projectImg.src = project.img;
-
     const projectName = document.createElement("h3");
-    projectName.textContent = project.name;
-
-    const iconContainer = document.createElement("span");
-
+    const cardIcons = document.createElement("div");
+    const githubLink = document.createElement("a");
     const githubIcon = document.createElement("img");
+    const visitLink = document.createElement("a");
     const visitIcon = document.createElement("img");
-
-    iconContainer.appendChild(githubIcon);
-    iconContainer.appendChild(visitIcon);
-
     const projectDescription = document.createElement("p");
+
+    // Assign Classes
+    card.classList.add("card");
+    projectName.classList.add("project-name");
+    githubIcon.classList.add("icon");
+    visitIcon.classList.add("icon");
+    cardIcons.classList.add("card-icons");
+
+    // Text Content
+    projectName.textContent = project.name;
     projectDescription.textContent = project.description;
 
+    //Links
+    githubLink.href = "https://github.com/JavedanCode";
+    // Add project links later
+    visitLink.href = "#";
+
+    // Link Attributes
+    githubLink.target = "_blank";
+    githubLink.rel = "noopener noreferrer";
+    githubLink.setAttribute("aria-label", "Visit my GitHub profile");
+    visitLink.target = "_blank";
+    visitLink.rel = "noopener noreferrer";
+    visitLink.setAttribute("aria-label", "View live project");
+
+    // Image Sources
+    projectImg.src = project.img;
+    githubIcon.src = githubLogo;
+    visitIcon.src = visit;
+
+    //Image Loading
+    projectImg.loading = "lazy";
+
+    // Project Image Alternates
+    // Will add later into project objects
+    projectImg.alt = `${project.name} screenshot`;
+    visitIcon.alt = "View live project";
+    githubIcon.alt = "View Project repository";
+
+    // Append Children
+    githubLink.appendChild(githubIcon);
+    visitLink.appendChild(visitIcon);
+    cardIcons.appendChild(githubLink);
+    cardIcons.appendChild(visitLink);
     card.appendChild(projectImg);
     card.appendChild(projectName);
-    card.appendChild(iconContainer);
+    card.appendChild(cardIcons);
     card.appendChild(projectDescription);
-
     cardContainer.appendChild(card);
   });
 
-  content.appendChild(heading);
-  content.appendChild(cardContainer);
+  // Add All to Content
+  contentWrapper.appendChild(heading);
+  contentWrapper.appendChild(cardContainer);
+  content.appendChild(contentWrapper);
 }
