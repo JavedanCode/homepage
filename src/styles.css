@@ -275,6 +275,9 @@ body::before {
   filter: grayscale(0%) contrast(1.1) brightness(1.05);
 }
 
+.description {
+  padding: 18px;
+}
 /* =========================
    FOOTER
    ========================= */
