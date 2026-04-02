@@ -1,3 +1,390 @@
+/* =========================
+   ROOT VARIABLES (THEME)
+   ========================= */
+:root {
+  --phoenix-dark: #0a0a0a;
+  --phoenix-deep: #2b0d0d;
+  --phoenix-surface: #1c1c1c;
+
+  --phoenix-orange: #ff7b00;
+  --phoenix-bright: #ff8a00;
+  --phoenix-red: #ff2e00;
+  --phoenix-core: #ff4500;
+
+  --text-primary: #f5f5f5;
+  --text-muted: #bbbbbb;
+
+  --glow-soft: rgba(255, 120, 0, 0.4);
+  --glow-strong: rgba(255, 70, 0, 0.7);
+
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-dark: rgba(0, 0, 0, 0.25);
+}
+
+a {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =========================
+   BODY
+   ========================= */
 body {
   font-family: sans-serif;
+  background-color: antiquewhite;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  align-items: center;
+}
+
+.about-me-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  max-width: 500px;
+  text-align: center;
+}
+
+.hero-icons {
+  display: flex;
+  justify-content: right;
+  gap: 8px;
+  justify-content: center;
+}
+.hero-wrapper h1 {
+  position: absolute;
+  top: 370px;
+  left: 45px;
+
+  color: white;
+  font-size: 2rem;
+  z-index: 2;
+}
+
+@media (min-width: 375px) {
+  .hero-wrapper h1 {
+    left: 70px;
+  }
+}
+@media (min-width: 425px) {
+  .hero-wrapper h1 {
+    left: 100px;
+  }
+}
+/* =========================
+   HERO TABLET
+   ========================= */
+@media (min-width: 768px) {
+  .hero-wrapper {
+    position: relative;
+    display: block;
+    padding: 60px 20px;
+  }
+
+  .hero-wrapper h1 {
+    position: absolute;
+    top: 450px;
+    left: 7px;
+
+    transform: none;
+    font-size: 2.5rem;
+    color: white;
+  }
+
+  #main {
+    margin: 50px;
+    flex: 1;
+  }
+
+  .about-me-container {
+    margin-left: 270px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    max-width: 300px;
+  }
+  .hero-icons {
+    justify-content: end;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 90px;
+    left: 0;
+
+    width: 300px;
+    z-index: 2;
+  }
+}
+/* =========================
+   HERO DESKTOP
+   ========================= */
+@media (min-width: 1024px) {
+  .about-me-container {
+    max-width: 700px;
+  }
+  .hero-wrapper h1 {
+    top: 370px;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    width: 300px;
+    z-index: 2;
+  }
+}
+
+@media (min-width: 1440px) {
+  .hero-wrapper h1 {
+    left: 228px;
+  }
+
+  .about-me-container {
+    margin-left: 480px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 30px;
+    left: 0;
+
+    width: 300px;
+    z-index: 2;
+    margin-left: 220px;
+  }
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
+.content-wrapper {
+  padding: 16px;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.card-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.card {
+  border: solid 1px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+}
+
+.card-top {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+/* =========================
+   CONTENT TABLET
+   ========================= */
+@media (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+}
+/* =========================
+   CONTENT DESKTOP
+   ========================= */
+@media (min-width: 1024px) {
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 50px;
+  }
+  main {
+    margin: 100px;
+  }
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer {
+  width: 100%;
+  margin: 0;
+}
+.footer-wrapper {
+  display: flex;
+  gap: 30px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bbbbbb;
+  margin: 0;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.contact-me-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-image {
+  max-width: 300px;
+}
+
+.contact-us-p,
+.address {
+  max-width: 300px;
+}
+
+/* =========================
+   FOOTER TABLET
+   ========================= */
+@media (min-width: 768px) {
+  .footer-wrapper {
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 25px;
+  }
+
+  .footer-image {
+    max-width: 350px;
+  }
+}
+
+/* =========================
+   IMAGES
+   ========================= */
+#profile-pic {
+  max-width: 300px;
+  width: 100%;
+  display: block;
+}
+.hero-icons .icon {
+  width: 30px;
+}
+
+.card-icons .icon {
+  width: 25px;
+}
+
+.project-img {
+  max-width: 100%;
+}
+.footer-icons {
+  display: flex;
+  gap: 8px;
+  flex-direction: row;
+}
+.footer-icons .icon {
+  width: 35px;
+}
+
+.email-icon {
+  width: 25px;
+  margin-right: 10px;
+}
+.email-link {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   LARGE SCREENS (4K+)
+   ========================= */
+@media (min-width: 1600px) {
+  /* Constrain main content */
+  #main {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projects {
+    max-width: 1800px;
+  }
+  .content-wrapper {
+    max-width: 1700px;
+  }
+
+  .hero-wrapper {
+    margin-bottom: 50px;
+  }
+  .hero-wrapper h1 {
+    left: 140px;
+    top: 389px;
+  }
+
+  .about-me-container {
+    margin-left: 390px;
+    background: white;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  #profile-pic {
+    position: absolute;
+    top: 30px;
+    left: -90px;
+
+    width: 300px;
+    z-index: 2;
+    margin-left: 220px;
+  }
+
+  .card-container {
+    gap: 40px;
+  }
+
+  .card {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+
+  /* Footer alignment */
+  .footer-wrapper {
+    max-width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    gap: 280px;
+  }
 }

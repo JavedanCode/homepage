@@ -5,9 +5,10 @@ export default function createLayout() {
   const content = document.createElement("section");
   const footer = document.createElement("footer");
   // Give ID's to all sections
-  hero.id = "hero-container";
+  hero.id = "hero";
   content.id = "projects";
   footer.id = "footer";
+  mainContainer.id = "main";
 
   // Assign Classes
   hero.classList.add("hero");

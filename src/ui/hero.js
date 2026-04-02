@@ -1,9 +1,8 @@
 import githubLogo from "../img/github-mark.svg";
-import storm from "../img/storm.jpg";
+import phoenix from "../img/phoenix.png";
 
 export default function renderHero(hero) {
   // Create Elements
-
   const aboutMeContainer = document.createElement("div");
   const profilePic = document.createElement("img");
   const heroWrapper = document.createElement("div");
@@ -48,13 +47,13 @@ export default function renderHero(hero) {
   linkdinLink.setAttribute("aria-label", "Visit my Linkedln profile");
 
   // Image Sources
-  profilePic.src = storm;
+  profilePic.src = phoenix;
   githubIcon.src = githubLogo;
   linkdinIcon.src =
     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-plain.svg";
 
   // Image Alternates
-  profilePic.alt = "Soren Javedan Computer Engineer";
+  profilePic.alt = "Phoenix";
   githubIcon.alt = "Visit my Github page";
   linkdinIcon.alt = "Visit my Linkdin page";
 

@@ -58,13 +58,16 @@ export default function renderContent(content) {
     const visitLink = document.createElement("a");
     const visitIcon = document.createElement("img");
     const projectDescription = document.createElement("p");
+    const cardTop = document.createElement("div");
 
     // Assign Classes
     card.classList.add("card");
     projectName.classList.add("project-name");
+    projectImg.classList.add("project-img");
     githubIcon.classList.add("icon");
     visitIcon.classList.add("icon");
     cardIcons.classList.add("card-icons");
+    cardTop.classList.add("card-top");
 
     // Text Content
     projectName.textContent = project.name;
@@ -102,9 +105,10 @@ export default function renderContent(content) {
     visitLink.appendChild(visitIcon);
     cardIcons.appendChild(githubLink);
     cardIcons.appendChild(visitLink);
+    cardTop.appendChild(projectName);
+    cardTop.appendChild(cardIcons);
     card.appendChild(projectImg);
-    card.appendChild(projectName);
-    card.appendChild(cardIcons);
+    card.appendChild(cardTop);
     card.appendChild(projectDescription);
     cardContainer.appendChild(card);
   });
