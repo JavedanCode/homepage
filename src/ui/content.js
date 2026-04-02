@@ -40,7 +40,7 @@ export default function renderContent(content) {
   ];
 
   // Text Content
-  heading.textContent = "My Projects";
+  heading.textContent = "My Odin Projects";
 
   // Card Container Class
   cardContainer.classList.add("card-container");
